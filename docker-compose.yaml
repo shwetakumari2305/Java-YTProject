@@ -1,0 +1,52 @@
+version: "3.3"
+services:
+  mysqlservice:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    container_name: mysql-container
+    #network_mode: host
+    #hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: AuthenticationDB
+      MYSQL_USERNAME: root
+      #     MYSQL_PASSWORD: Global@145#
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+
+  eurekaserver:
+    container_name: eureka-server-container
+    build: eureka-server/
+    #hostname: localhost
+    #network_mode: host
+    ports:
+      - 8761:8761
+
+  api-gateway:
+    container_name: api-gateway-container
+    build: api-gateway/
+    #hostname: localhost
+    #network_mode: host
+    ports:
+      - 8079:8079
+
+  sim-activation:
+    container_name: sim-activation-container
+    build: sim-activation/
+    #hostname: localhost
+    #network_mode: host
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysqlservice
+
+  user-validation:
+    container_name: user-validation-container
+    build: user-validation/
+    #hostname: localhost
+    #network_mode: host
+    ports:
+      - 8082:8082
+    depends_on:
+      - sim-activation
