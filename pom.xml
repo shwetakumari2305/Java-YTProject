@@ -62,7 +62,9 @@
 					</excludes>
 				</configuration>
 			</plugin>
+		
 		</plugins>
+		<filename> 0.0.1-SNAPSHOT.jar </filename>
 	</build>
 
 </project>
