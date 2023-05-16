@@ -6,10 +6,10 @@ services:
       - 3306:3306
     container_name: mysql-container
     #network_mode: host
-    #hostname: localhost
+    hostname: localhost
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: AuthenticationDB
+      MYSQL_DATABASE: SIMDetails
       MYSQL_USERNAME: root
       #     MYSQL_PASSWORD: Global@145#
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
@@ -18,7 +18,7 @@ services:
   eurekaserver:
     container_name: eureka-server-container
     build: eureka-server/
-    #hostname: localhost
+    hostname: localhost
     #network_mode: host
     ports:
       - 8761:8761
