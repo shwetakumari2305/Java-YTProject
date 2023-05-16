@@ -12,7 +12,7 @@ services:
       MYSQL_DATABASE: SIMDetails
       MYSQL_USERNAME: root
       #     MYSQL_PASSWORD: Global@145#
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
 
 
   eurekaserver:
