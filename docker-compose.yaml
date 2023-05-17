@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   mysqlservice:
-    image: mysql:latest
+    image: mysql
     ports:
       - 3307:3307
     container_name: mysql-container
