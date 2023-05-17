@@ -17,7 +17,7 @@ services:
 
   eurekaserver:
     container_name: eureka-server-container
-    build: eureka-server/
+    build: eurekaserver/
     hostname: localhost
     #network_mode: host
     ports:
